@@ -1,0 +1,44 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="csrf_token" />
+            <item index="1" class="java.lang.String" itemvalue="text" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W292" />
+          <option value="E302" />
+          <option value="E231" />
+          <option value="E111" />
+          <option value="E225" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.__truediv__" />
+          <option value="django.db.impormodels" />
+          <option value="pyproject.pyprojectapp.views.contact.html" />
+          <option value="pyproject.pyprojectapp.views.contact.*" />
+          <option value="disproject.disproject.settings.templete" />
+          <option value="ecomerceproject.eshopapp.models.*" />
+          <option value="todoproject.todoapp.forms.ToDoForm.Is_valid" />
+          <option value="django.db.models.fields.related.ForeignKey.price" />
+          <option value="ecommerceproject.cartapp.models.Cart.objects" />
+          <option value="ecommerceproject.ecommerceproject.urls.views" />
+          <option value="ecommerceproject.cartapp.views.product" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPEhtml>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+<h2>REGISTRATION</h2>
+
+<form action="{%url 'signup'%}" method="post">
+{%csrf_token%}
+ {{form.as_p}}
+<input type="submit">
+</form>
+
+
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,69 @@
+<!-- movie_detail.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1>{{ movie.title }}</h1>
+    </div>
+    <div class="card-body">
+        <img src="{{ movie.poster.url }}" class="img-fluid" alt="{{ movie.title }} Poster">
+        <p class="card-text">Description: {{ movie.description }}</p>
+        <p class="card-text">Release Date: {{ movie.release_date }}</p>
+        <p class="card-text">Actors: {{ movie.actors }}</p>
+        <p class="card-text">Genre: {{ movie.genre }}</p>
+        <p class="card-text">YouTube Trailer: <a href="{{ movie.youtube_trailer }}" class="btn btn-primary">Watch Trailer</a></p>
+        <p class="card-text">Added by: {{ movie.added_by.username }}</p>
+
+        <h4>Reviews</h4>
+        <ul class="list-group">
+            {% for review in movie.review_set.all %}
+                <li class="list-group-item">{{ review.text }} - Rating: {{ review.rating }} by {{ review.user.username }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if request.user == movie.added_by %}
+            <a href="{% url 'edit_movie' movie.id %}" class="btn btn-warning">Edit Movie</a>
+            <form action="{% url 'delete_movie' movie.id %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete Movie</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+<form action="{% url 'movie_detail' movie.id %}" method="post" class="mt-4">
+    {% csrf_token %}
+    {{ review_form.as_p }}
+    <input type="submit" value="Add Review" class="btn btn-primary">
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

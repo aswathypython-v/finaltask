@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% for message in messages %}
+<h2>{{message}}</h2>
+{%endfor%}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter username"><br>
+    <input type="password" name="password" placeholder="Enter password"><br>
+    <input type="submit" value="Login">
+</form>
+
+{% if error_message %}
+<p>{{ error_message }}</p>
+{% endif %}
+
+</body>
+</html>
+{% endblock %}
